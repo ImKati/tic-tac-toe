@@ -43,3 +43,40 @@ function currentStep() {
             : (message.innerText = "Ходит игрок " + player);
     }
 }
+
+function changePlayer() {
+    player === "X" ? (player = "O") : (player = "X");
+}
+
+reset.addEventListener("click", function() {
+    for (let i = 0; i < ceil.length; i++) {
+        ceil[i].innerText = "";
+    }
+    dataO = [];
+    dataX = [];
+    player = "O";
+    stepCount = 0;
+    message.innerText = "Ходит игрок " + player;
+    for (let i = 0; i < ceil.length; i++) {
+        ceil[i].addEventListener("click", currentStep);
+        ceil[i].classList.remove("x", "o");
+    }
+});
+
+function checkWin(arr, number) {
+    for (let w = 0, wLen = winCombinations.length; w < wLen; w++) {
+        let someWinArr = winCombinations[w],
+            count = 0;
+        if (someWinArr.indexOf(number) !== -1) {
+            for (let k = 0, kLen = someWinArr.length; k < kLen; k++) {
+                if (arr.indexOf(someWinArr[k]) !== -1) {
+                    count++;
+                    if (count === 3) {
+                        return true;
+                    }
+                }
+            }
+            count = 0;
+        }
+    }
+}
