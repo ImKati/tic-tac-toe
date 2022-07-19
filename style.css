@@ -1,3 +1,8 @@
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
 
 .game-title{
     display: block;
@@ -10,22 +15,23 @@
 .game{
     display: flex;
     justify-content: space-between;
+    width: 300px;
+    height: 300px;
+    background-color: #ffeca1;
     flex-wrap: wrap;
-    width: 152px;
-    margin: 0 auto 50px;
-    border: 1px solid #000;
+    margin: 0 auto;
 }
 
 .game-item{
-    position: relative;
-    width: 50px;
-    line-height: 48px;
-    border: 1px solid #000;
-    cursor: pointer;
-    text-align: center;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    color:#ec2a00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 30px;
-    font-weight: bold;
-    transition: all linear .3s;
 }
 
 :hover{
@@ -46,7 +52,7 @@
     border: 1px solid #000;
     border-radius: 20px;
     background-color: #fff;
-    padding: 10px 20px;
+    padding: 10px 40px;
     cursor: pointer;
     transition: all linear .3s;
 }
